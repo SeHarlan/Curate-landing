@@ -27,26 +27,26 @@ export default function Home() {
 
   return (
     <div className='bg-stone-950 h-screen flex flex-wrap w-full'>
-      <GlitchBG className='h-[33%] lg:h-full relative w-full lg:w-[33%]' />
+      <GlitchBG className='h-[30%] lg:h-full relative w-full lg:w-[33%]' />
  
       <div
-        className="flex flex-col items-center justify-evenly w-full lg:w-[66%]"
+        className="flex flex-col items-center justify-evenly w-full lg:w-[66%] h-[70%] lg:h-full"
       >
-        <div className='px-[6rem z-[1] relative left-[1rem]'>
+        <div className='z-[1] relative '>
 
           <Wait time="delay-[0.6s]">
             <h1
-              className='font-title text-left text-[5rem] md:text-[6rem] text-stone-700 relative lg:right-[10vw] top-[4rem]'
+              className='font-title text-left text-[4rem] md:text-[6rem] text-stone-700 relative lg:right-[10vw] top-[4rem]'
             // style={{ textShadow: '4px 4px 0px rgba(48, 45, 43, 0.5)'}}
             >Create</h1>
           </Wait>
           <h1
-            className='font-title text-left h-[10rem] text-[5rem] md:text-[6rem] text-stone-200  leading-none z-10 flex items-center tracking-[-0.0005em]'
+            className='font-title text-left h-[10rem] text-[4rem] md:text-[6rem] text-stone-200  leading-none z-10 flex items-center tracking-[-0.0005em]'
             // style={{ textShadow: '4px 4px 0px rgba(87 83 78)', filter: 'drop-shadow(2px 2px 6px black' }}
           >{title}</h1>
           <Wait time="delay-[1.6s]">
             <h1
-              className='font-title text-left text-[5rem] md:text-[6rem] text-stone-700 relative lg:left-[10vw] bottom-[4rem] z-[-1]'
+              className='font-title text-left text-[4rem] md:text-[6rem] text-stone-700 relative lg:left-[10vw] bottom-[4rem] z-[-1]'
             // style={{ textShadow: '4px 4px 0px rgba(48, 45, 43, 0.5)' }}
             >Collect</h1>
           </Wait>
@@ -54,7 +54,8 @@ export default function Home() {
 
         <div
           className='
-            w-full grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr_auto_1fr] 
+            hidden lg:grid
+            w-full grid-cols-1 lg:grid-cols-[1fr_auto_1fr_auto_1fr] 
             gap-3 items-center relative bottom-[5rem]
             text-2xl text-center text-stone-200 bg-stone-950
           '

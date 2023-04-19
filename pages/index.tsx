@@ -42,8 +42,8 @@ export default function Home() {
         enterFrom="transform translate-y-5 opacity-0"
         enterTo="transform translate-y-0 opacity-100"
       >
-      <h1 className='font-title text-9xl text-center text-stone-80 '
-        style={{ textShadow: '4px 4px 0px rgba(97 93 88)' }}
+      <h1 className='font-title text-7xl lg:text-9xl text-center text-stone-80 '
+        style={{ textShadow: '3px 3px 0px rgba(97 93 88)' }}
       >{title}</h1>
       </Transition>
  
@@ -54,7 +54,7 @@ export default function Home() {
         <Transition
           appear={true}
           show={true}
-          enter="delay-[3s] transition duration-[2.5s] ease-out"
+          enter="delay-[3.5s] transition duration-[2.5s] ease-out"
           enterFrom="transform translate-y-5 opacity-0"
           enterTo="transform translate-y-0 opacity-100"
         >

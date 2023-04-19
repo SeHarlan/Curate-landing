@@ -223,7 +223,7 @@ const MainBG: FC<{className?: string}> = ({className}) => {
       const h = p.hue(bgC) + p.random(-10, 10)
       const s = p.saturation(bgC) + p.random(-5, 5)
       const l = p.lightness(bgC) + p.random(-5, 5)
-      const a = 0.9//p.random(0.1, 0.8)
+      const a = .95//p.random(0.1, 0.8)
       graphics.noStroke()
       graphics.fill(p.color(h, s, l, a))
       graphics.beginShape();
@@ -280,7 +280,7 @@ const MainBG: FC<{className?: string}> = ({className}) => {
         graphics.fill(p.color(h, s, l, a))
         graphics.rectMode(p.CENTER)
 
-        const range = dist*0.05
+        const range = dist*0.03
         graphics.rect(
           xs,
           ys,

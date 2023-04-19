@@ -29,21 +29,21 @@ export default function Home() {
       <div
         className="w-full flex items-center justify-center mt-[10vh]"
       >
-        <div className='py-[3rem] px-[6rem z-[1] relative left-[1rem]'>
+        <div className='lg:py-[3rem] px-[6rem z-[1] relative left-[1rem]'>
 
           <Wait time="delay-[0.6s]">
             <h1
-              className='font-title text-left text-[5rem] md:text-[8rem] lg:text-[10rem] text-stone-900/80 relative lg:right-[10vw] top-[4rem]'
+              className='font-title text-left text-[4rem] md:text-[8rem] lg:text-[10rem] text-stone-900/80 relative lg:right-[10vw] top-[4rem]'
               // style={{ textShadow: '4px 4px 0px rgba(48, 45, 43, 0.5)'}}
             >Create</h1>
           </Wait>
           <h1
-            className='font-title text-left h-[10rem] text-[5rem] md:text-[8rem] lg:text-[10rem] text-amber-50  leading-none z-10 flex items-center tracking-[-0.0005em]'
+            className='font-title text-left h-[10rem] text-[4rem] md:text-[7rem] lg:text-[10rem] text-amber-50  leading-none z-10 flex items-center tracking-[-0.0005em]'
             style={{ textShadow: '4px 4px 0px rgba(87 83 78)', filter: 'drop-shadow(2px 2px 6px black' }}
           >{title}</h1>
           <Wait time="delay-[1.6s]">
             <h1
-              className='font-title text-left text-[5rem] md:text-[8rem] lg:text-[10rem] text-stone-900/80 relative lg:left-[10vw] bottom-[4rem] z-[-1]'
+              className='font-title text-left text-[4rem] md:text-[8rem] lg:text-[10rem] text-stone-900/80 relative lg:left-[10vw] bottom-[4rem] z-[-1]'
               // style={{ textShadow: '4px 4px 0px rgba(48, 45, 43, 0.5)' }}
             >Collect</h1>
           </Wait>

@@ -32,7 +32,7 @@ export default function Home() {
       <div
         className="flex flex-col items-center justify-evenly w-full lg:w-[66%]"
       >
-        <div className='px-[6rem z-[1]'>
+        <div className='z-[1]'>
 
           <Wait time="delay-[0.6s]">
             <h1
@@ -54,7 +54,8 @@ export default function Home() {
 
         <div
           className='
-            w-full grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr_auto_1fr] 
+            hidden lg:grid
+            w-full grid-cols-1 lg:grid-cols-[1fr_auto_1fr_auto_1fr] 
             gap-3 items-center relative bottom-[5rem]
             text-2xl text-center text-stone-800
           '
