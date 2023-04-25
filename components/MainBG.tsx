@@ -174,7 +174,7 @@ const MainBG: FC<{className?: string}> = ({className}) => {
       if (counter < 100) {
         make()
         make()
-        make()
+        // make()
       }
       counter++
       paintShader.setUniform("resolution", [p.width, p.height]);
@@ -229,8 +229,8 @@ const MainBG: FC<{className?: string}> = ({className}) => {
       graphics.beginShape();
       const step = 0.01
 
-      function getNoise(x: number, y: number, off: number, range = 2) {
-        const ratio = 0.001;
+      function getNoise(x: number, y: number, off: number, range = 3) {
+        const ratio = 0.01;
         return p.map(p.noise(x * ratio + off, y * ratio + off), 0, 1, -range, range)
       }
 
@@ -281,12 +281,12 @@ const MainBG: FC<{className?: string}> = ({className}) => {
         graphics.rectMode(p.CENTER)
 
         const range = dist*0.03
-        graphics.rect(
-          xs,
-          ys,
-          isVert ? p.random(1, range) : 1,
-          isVert ? 1 : p.random(1, range)
-        )
+        // graphics.rect(
+        //   xs,
+        //   ys,
+        //   isVert ? p.random(1, range) : 1,
+        //   isVert ? 1 : p.random(1, range)
+        // )
       }
     }
   };

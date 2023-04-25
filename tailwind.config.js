@@ -14,12 +14,14 @@ module.exports = {
         "title": ['var(--font-title)', ...fontFamily.mono],
         "abril": ['var(--font-abril)', ...fontFamily.mono]
       },
-      extend: {
-        textShadow: {
-          sm: '0 1px 2px var(--tw-shadow-color)',
-          DEFAULT: '0 2px 4px var(--tw-shadow-color)',
-          lg: '0 8px 16px var(--tw-shadow-color)',
-        },
+  
+      textShadow: {
+        sm: '0 1px 2px var(--tw-shadow-color)',
+        DEFAULT: '0 2px 4px var(--tw-shadow-color)',
+        lg: '0 8px 16px var(--tw-shadow-color)',
+      },
+      animation: {
+        'spin-slow': 'spin 5s linear infinite',
       },
       height: { screen: 'calc(var(--vh) * 100)' },
       maxHeight: { screen: 'calc(var(--vh) * 100)' },

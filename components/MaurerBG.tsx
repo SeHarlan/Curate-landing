@@ -91,7 +91,7 @@ void main() {
 }
 `;
 
-const MaurerBG: FC<{className?: string}> = ({className}) => {
+const MaurerBG: FC<{className?: string, scale?: number}> = ({className, scale = 5}) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const sketch = (p: p5) => {
@@ -141,14 +141,16 @@ const MaurerBG: FC<{className?: string}> = ({className}) => {
     };
 
     p.draw = () => {
+      
       if (counter < p.TWO_PI - p.radians(1)) {
         drawGrid()
-      } 
+      }
 
       paintShader.setUniform("resolution", [p.width, p.height]);
       paintShader.setUniform("texture", graphics)
       paintShader.setUniform("rando", p.random())
       p.rect(-p.width / 2, -p.height / 2, p.width, p.height);
+      
     };
 
     function makeGrid(width: number, height: number) {
@@ -159,7 +161,7 @@ const MaurerBG: FC<{className?: string}> = ({className}) => {
       graphics.strokeWeight(1);
       
       const depth = 0.25
-      const scl = 5;
+      const scl = scale;
 
       function getRadius(noise = 0.4) {
         const base = p.min(p.height, p.width)
