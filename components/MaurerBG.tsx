@@ -3,6 +3,7 @@ import p5 from "p5";
 import dynamic from "next/dynamic";
 import { randomBytes } from "crypto";
 import debounce from "lodash.debounce";
+import { useWebGLSupported } from "@/hooks/useWebGLSupported";
 const P5Wrapper = dynamic(() => import('./P5Wrapper'), { ssr: false });
 
 const vertexShader = `
@@ -93,6 +94,7 @@ void main() {
 
 const MaurerBG: FC<{className?: string, scale?: number}> = ({className, scale = 5}) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const useWebGL = useWebGLSupported()
 
   const sketch = (p: p5) => {
     let paintShader: p5.Shader;
@@ -112,13 +114,19 @@ const MaurerBG: FC<{className?: string, scale?: number}> = ({className, scale = 
     const baseNum = p.randomGaussian(0, 1000)
     
     p.setup = () => {
-      p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
+      if (useWebGL) {
+        p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
+      } else {
+        p.createCanvas(p.windowWidth, p.windowHeight);
+      }
 
       graphics = p.createGraphics(p.width, p.height);
         
-      //@ts-ignore
-      paintShader = new p5.Shader(p._renderer, vertexShader, fragmentShader);
-      p.shader(paintShader)
+      if (useWebGL) {
+        //@ts-ignore
+        paintShader = new p5.Shader(p._renderer, vertexShader, fragmentShader);
+        p.shader(paintShader)
+      }
 
       makeGrid(p.width, p.height)
     };
@@ -128,7 +136,7 @@ const MaurerBG: FC<{className?: string, scale?: number}> = ({className, scale = 
         const { clientWidth, clientHeight } = containerRef.current;
         p.resizeCanvas(clientWidth, clientHeight);
 
-        graphics?.resizeCanvas(clientWidth, clientHeight);
+        graphics.resizeCanvas(clientWidth, clientHeight);
 
         makeGrid(clientWidth, clientHeight)
       }
@@ -146,10 +154,17 @@ const MaurerBG: FC<{className?: string, scale?: number}> = ({className, scale = 
         drawGrid()
       }
 
-      paintShader.setUniform("resolution", [p.width, p.height]);
-      paintShader.setUniform("texture", graphics)
-      paintShader.setUniform("rando", p.random())
-      p.rect(-p.width / 2, -p.height / 2, p.width, p.height);
+      if (useWebGL) {
+        paintShader.setUniform("resolution", [p.width, p.height]);
+        paintShader.setUniform("texture", graphics)
+        paintShader.setUniform("rando", p.random())
+        p.rect(-p.width / 2, -p.height / 2, p.width, p.height);
+      } else {
+        p.image(graphics, 0, 0)
+
+        p.fill(12, 10, 9, 255*0.3)
+        p.rect(0, 0, p.width, p.height);
+      }
       
     };
 

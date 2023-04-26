@@ -6,9 +6,6 @@ import { useEffect, useState } from 'react';
 
 const MainBG = dynamic(() => import('../components/MainBG'), { ssr: false });
 
-const AbrilBG = dynamic(() => import('../components/AbrilBG'), { ssr: false });
-
-
 export default function Home() {
   const [title, setTitle] = useState('');
   const [textIndex, setTextIndex] = useState(0);
@@ -28,14 +25,10 @@ export default function Home() {
   }, [textIndex]);
   
   return (
-    <div className="flex flex-col justify-center items-center h-screen relative bg-stone-100">
-      {/* {textIndex >= text.length
-        ? <MainBG className='absolute top-0 left-0 w-full h-full' />
-        : null
-      } */}
+    <div className="flex flex-col justify-center items-center h-screen relative bg-stone-100 text-stone-800">
       <MainBG className='absolute top-0 left-0 w-full h-full' />
 
-      {/* <Transition
+      <Transition
         appear={true}
         show={true}
         enter="transition duration-[0.5s] ease-out"
@@ -46,12 +39,12 @@ export default function Home() {
         style={{ textShadow: '3px 3px 0px rgba(97 93 88)' }}
       >{title}</h1>
       </Transition>
-  */}
+ 
 
      
         
 
-        {/* <Transition
+        <Transition
           appear={true}
           show={true}
           enter="delay-[2s] transition duration-[2.5s] ease-out"
@@ -59,7 +52,7 @@ export default function Home() {
           enterTo="transform translate-y-0 opacity-100"
         >
         <p className='text-2xl mt-10' style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>A New Art Discovery Experience</p>
-        </Transition> */}
+        </Transition>
     </div>
   )
 }
