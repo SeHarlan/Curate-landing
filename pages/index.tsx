@@ -125,12 +125,12 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='m-auto max-w-screen-2xl p-5'>
-        <div className='grid grid-cols-1 md:grid-cols-2 items-center gap-5 text-lg'>
+      <div className='m-auto max-w-screen-2xl p-5 mt-10'>
+        <div className='grid grid-cols-1 md:grid-cols-2 items-center gap-5 md:text-lg'>
           <div className='mb-3 md:col-span-2 flex justify-center'>
-            <h2 className="text-5xl border-b-4 border-rose-800 py-2 md:px-6 text-center">A New Art Discovery Experience</h2>
+            <h2 className="text-3xl md:text-5xl border-b-4 border-rose-800 py-2 md:px-6 text-center">A New Art Discovery Experience</h2>
           </div>
-          <p className='md:col-span-2 text-center italic text-2xl'>
+          <p className='md:col-span-2 text-center italic md:text-2xl'>
             You focus on creating or collecting, we take care of everything in between.
           </p>
           <div>
@@ -153,11 +153,11 @@ export default function Home() {
           </div>
         </div>
         <div className='mt-12 md:mt-0 mb-8 flex justify-center'>
-          <h2 className="text-5xl border-b-4 border-rose-800 py-2 md:px-6 text-center">
+          <h2 className="text-3xl md:text-5xl border-b-4 border-rose-800 py-2 md:px-6 text-center">
             Join Curate
           </h2>
         </div>
-        <p className='mb-10 text-center text-2xl italic'>
+        <p className='mb-10 text-center md:text-2xl italic'>
           Sign up to join the Curate community and get early access!
         </p>
         <div className="flex justify-center mb-10">
